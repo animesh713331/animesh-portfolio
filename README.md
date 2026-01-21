@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website built using **React** and **Tailwind CSS** to showcase my projects, skills, experience, and contact information. The site focuses on clean UI, smooth interactions, and performance, and is deployed on **Vercel** with a fully working contact form.
 
-🔗 **Live Demo:** https://your-domain.vercel.app  
+🔗 **Live Demo:** https://animeshkumarsingh.vercel.app/
 🚀 **Deployment:** Vercel
 
 ---
