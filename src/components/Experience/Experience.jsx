@@ -10,7 +10,6 @@ const Experience = () => {
       className="py-24 font-sans bg-skills-gradient clip-path-custom-2"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-
         {/* Section Title */}
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
@@ -23,7 +22,6 @@ const Experience = () => {
 
         {/* Timeline Wrapper */}
         <div className="relative">
-
           {/* Vertical line — DESKTOP ONLY */}
           <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-white/30" />
 
@@ -40,13 +38,14 @@ const Experience = () => {
                   : "justify-end md:pl-16"
               }`}
             >
-
               {/* Timeline Dot — DESKTOP ONLY */}
               <div className="hidden md:flex absolute left-1/2 top-10 -translate-x-1/2 z-20">
-                <div className="w-14 h-14 rounded-full bg-gray-900
+                <div
+                  className="w-14 h-14 rounded-full bg-gray-900
                                 border-4 border-purple-500
                                 flex items-center justify-center
-                                shadow-[0_0_18px_rgba(130,69,236,0.45)]">
+                                shadow-[0_0_18px_rgba(130,69,236,0.45)]"
+                >
                   <img
                     src={experience.img}
                     alt={experience.company}
@@ -65,7 +64,6 @@ const Experience = () => {
                            p-6 sm:p-7
                            shadow-[0_0_25px_rgba(130,69,236,0.25)]"
               >
-
                 {/* Badges */}
                 {experience.badges?.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-3 md:absolute md:top-4 md:right-4">
@@ -77,13 +75,14 @@ const Experience = () => {
 
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-4">
-
                   {/* Card Logo — ONLY LOGO ON MOBILE */}
-                  <div className="w-14 h-14 rounded-xl bg-white/10
+                  <div
+                    className="w-14 h-14 rounded-xl bg-white/10
                                   flex items-center justify-center
                                   ring-2 ring-purple-500/40
                                   shadow-[0_0_12px_rgba(130,69,236,0.3)]
-                                  shrink-0">
+                                  shrink-0"
+                  >
                     <img
                       src={experience.img}
                       alt={experience.company}
@@ -114,15 +113,19 @@ const Experience = () => {
                 {experience.skills?.length > 0 && (
                   <div>
                     <h5 className="text-sm font-medium text-purple-400 mb-2">
-                      Tech Stack
+                      {experience.type === "tech"
+                        ? "Tech Stack"
+                        : "Tools & Skills"}
                     </h5>
+
                     <ul className="flex flex-wrap gap-2">
                       {experience.skills.map((skill, idx) => (
                         <li
                           key={idx}
                           className="bg-[#8245ec]/20 text-gray-200
-                                     px-3 py-1 text-xs rounded-lg
-                                     border border-[#8245ec]/40">
+                   px-3 py-1 text-xs rounded-lg
+                   border border-[#8245ec]/40"
+                        >
                           {skill}
                         </li>
                       ))}
