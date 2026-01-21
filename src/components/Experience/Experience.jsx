@@ -1,93 +1,139 @@
 import React from "react";
-import { experiences } from "../../constants"; // Import your data
+import { experiences } from "../../constants";
+import { motion } from "framer-motion";
+import Badge from "../ui/Badge";
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
+      className="py-24 font-sans bg-skills-gradient clip-path-custom-2"
     >
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A collection of my work experience and the roles I have taken in
-          various organizations
-        </p>
-      </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        {/* Section Title */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
+          <div className="w-32 h-1 bg-purple-500 mx-auto mt-4" />
+          <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
+            Hands-on experience through internships, research, and real-world
+            engineering work where I built, shipped, and learned fast.
+          </p>
+        </div>
 
-      {/* Experience Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-white/30" />
 
-        {/* Experience Entries */}
-        {experiences.map((experience, index) => (
-          <div
-            key={experience.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${
-              index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
-            }`}
-          >
-            {/* Timeline Circle */}
-            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <img
-                src={experience.img}
-                alt={experience.company}
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-
-            {/* Content Section */}
-            <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={experience.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className={`relative mb-24 flex ${
+                index % 2 === 0
+                  ? "justify-start md:pr-16"
+                  : "justify-end md:pl-16"
+              }`}
             >
-              {/* Flex container for image and text */}
-              <div className="flex items-center space-x-6">
-                {/* Company Logo/Image */}
-                <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
+              {/* Timeline Dot */}
+              <div className="absolute left-1/2 top-10 -translate-x-1/2 z-20">
+                <div
+                  className="w-14 h-14 rounded-full bg-gray-900
+                             border-4 border-purple-500
+                             flex items-center justify-center
+                             shadow-[0_0_20px_rgba(130,69,236,0.5)]"
+                >
                   <img
                     src={experience.img}
                     alt={experience.company}
-                    className="w-full h-full object-cover"
+                    className="w-8 h-8 object-contain"
                   />
                 </div>
+              </div>
 
-                {/* Role, Company Name, and Date */}
-                <div className="flex flex-col justify-between">
+              {/* Card */}
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                className="w-full md:w-[44%] bg-gray-900/90 backdrop-blur-md
+                           border border-white/40 rounded-2xl
+                           p-6 sm:p-7
+                           shadow-[0_0_25px_rgba(130,69,236,0.25)]"
+              >
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-4">
+                  {/* Company Logo */}
+                  <div
+                    className="w-14 h-14 rounded-xl bg-white/10
+                               flex items-center justify-center
+                               ring-2 ring-purple-500/40
+                               shadow-[0_0_15px_rgba(130,69,236,0.35)]
+                               shrink-0"
+                  >
+                    <img
+                      src={experience.img}
+                      alt={experience.company}
+                      className="w-9 h-9 object-contain"
+                    />
+                  </div>
+
+                  {/* Role Info */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-white leading-snug">
                       {experience.role}
                     </h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">
-                      {experience.company}
-                    </h4>
-                  </div>
-                  {/* Date at the bottom */}
-                  <p className="text-sm text-gray-500 mt-2">{experience.date}</p>
-                </div>
-              </div>
 
-              <p className="mt-4 text-gray-400">{experience.desc}</p>
-              <div className="mt-4">
-                <h5 className="font-medium text-white">Skills:</h5>
-                <ul className="flex flex-wrap mt-2">
-                  {experience.skills.map((skill, index) => (
-                    <li
-                      key={index}
-                      className="bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        ))}
+                    {/* ✅ BADGES — Correct placement */}
+                    {experience.badges?.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        {experience.badges.slice(0, 2).map((badge, idx) => (
+                          <Badge key={idx} label={badge} />
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="text-sm text-gray-300 mt-1">
+                      {experience.company}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {experience.date}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  {experience.desc}
+                </p>
+
+                {/* Skills */}
+                <div>
+                  <h5 className="text-sm font-medium text-purple-400 mb-2">
+                    {experience.type === "tech"
+                      ? "Tech Stack"
+                      : "Tools & Skills"}
+                  </h5>
+
+                  <ul className="flex flex-wrap gap-2">
+                    {experience.skills.map((skill, idx) => (
+                      <li
+                        key={idx}
+                        className="bg-[#8245ec]/20 text-gray-200
+                                   px-3 py-1 text-xs rounded-lg
+                                   border border-[#8245ec]/40"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

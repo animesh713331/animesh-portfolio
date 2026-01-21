@@ -147,9 +147,11 @@ export const SkillsInfo = [
       company: "Codec Technologies India Pvt. Ltd.",
       date: "January 2026 - Present | Remote",
       desc: "Working on blockchain fundamentals and real-world Web3 use cases, with a focus on understanding decentralized architectures and Ethereum-based ecosystems. Involved in designing and developing smart contracts, learning best practices for security, transparency, and gas-efficient execution. Also contributing to Web3 integrations by connecting smart contracts with frontend and backend services.",
+      type:"tech",
       skills: [
         "Solidity", "Ethereum", "Web3.js", "Ethers.js", "JavaScript", "REST APIs", "Git", "ReactJS"
       ],
+
     },
     {
       id: 1,
@@ -158,9 +160,11 @@ export const SkillsInfo = [
       company: "BIT Sindri , Dhanbad",
       date: "June 2025 - July 2025 | Onsite",
       desc: "Worked as a research intern under the Department of CSE & IT, focusing on solving real-world problems through data-driven engineering. Built an end-to-end pipeline involving data processing, feature engineering, model development, and evaluation for a used-car sales prediction system. Collaborated with research mentors and presented final outcomes.",
+      type:"tech",
       skills: [
         "Python", "Machine Learning", "Data Analysis", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Jupyter Notebook"
       ],
+       badges: ["Internship", "Research"]
     },
     {
       id: 2,
@@ -169,14 +173,14 @@ export const SkillsInfo = [
       company: "Ecell IIT Roorkee",
       date: "December 2024 - Feb 2025 | Remote",
       desc: "Selected as a Campus Ambassador for E-Summit IIT Roorkee 2025, where I promoted events within my college and helped increase student participation. Worked on digital outreach, coordinated communication between students and organizers, and successfully completed the program with certification.",
+      type:"non-tech",
       skills: [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Bootstrap",
-        "Figma",
-        "Material UI",
-      ],
+    "Digital Outreach",
+    "Campaign Planning",
+    "Community Engagement",
+    "Canva",
+    "Social Media Analytics",
+  ],
     },
   ];
   
@@ -220,6 +224,7 @@ export const SkillsInfo = [
       tags: ["React", "Tailwind CSS", "Node.js", "Solidity", "Ethereum", "OpenZeppelin", "IPFS", "Web3.js / Ethers.js", "Hardhat"],
       github: "https://github.com/animesh713331/Smart_Student_Hub_Frontend",
       webapp: "https://smart-student-hub-93.vercel.app/login",
+      badges: ["Winner","Hackathon"],
     },
     {
       id: 1,
@@ -230,6 +235,7 @@ export const SkillsInfo = [
       tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "Git","Data Analysis", "Pandas", "Matplotlib"],
       github: "https://github.com/animesh713331/Practice-ML-Internship-BIT-Sindri-/tree/main/Final%20Project",
       webapp: "https://github.com/animesh713331/Practice-ML-Internship-BIT-Sindri-/tree/main/Final%20Project",
+      badges: ["ML", "Internship"],
     },
     {
       id: 2,
@@ -258,7 +264,8 @@ export const SkillsInfo = [
         "A modern, responsive personal portfolio showcasing projects, skills, and experience. Built with a focus on clean design, smooth interactions, and performance, and deployed with a custom domain.",
       image: portfolioLogo,
       tags: ["React", "Tailwind CSS", "Vite", "JavaScript", "Vercel"],
-      github: "https://github.com/codingmastr/Webverse-Digital",
-      webapp: "https://webversedigital.com/",
+      github: "https://github.com/animesh713331/animesh-portfolio",
+      webapp: "https://animeshkumarsingh.vercel.app/",
+       badges: ["Portfolio"]
     },
   ];  
