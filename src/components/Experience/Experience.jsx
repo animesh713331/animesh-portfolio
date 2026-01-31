@@ -1,138 +1,118 @@
 import React from "react";
 import { experiences } from "../../constants";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import Badge from "../ui/Badge";
+import HackerText from "../ui/HackerText";
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-24 font-sans bg-skills-gradient clip-path-custom-2"
+      className="py-24 font-sans bg-dark-bg relative"
     >
+      {/* Container */}
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section Title */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
-          <div className="w-32 h-1 bg-purple-500 mx-auto mt-4" />
-          <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
-            Hands-on experience through internships, research, and real-world
-            engineering work where I shipped and learned fast.
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+            Consensus <HackerText text="History_Log" className="text-[#8245ec]" />
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4 rounded-full" />
+          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto font-light">
+            Immutable record of my professional nodes.
           </p>
         </div>
 
         {/* Timeline Wrapper */}
         <div className="relative">
-          {/* Vertical line — DESKTOP ONLY */}
-          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-white/30" />
+          {/* Vertical line — Central Chain */}
+          {/* Vertical line — Central Chain */}
+          <div className="absolute left-6 md:left-1/2 top-0 h-full w-[2px] bg-white/5 md:-translate-x-1/2">
+            <div className="absolute top-0 left-0 w-full h-80 bg-gradient-to-b from-neon-purple to-transparent animate-[flow_5s_linear_infinite]"></div>
+          </div>
 
           {experiences.map((experience, index) => (
             <motion.div
               key={experience.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.12 }}
-              className={`relative mb-24 flex ${
-                index % 2 === 0
-                  ? "justify-start md:pr-16"
-                  : "justify-end md:pl-16"
-              }`}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`relative mb-20 flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                } items-center w-full`}
             >
-              {/* Timeline Dot — DESKTOP ONLY */}
-              <div className="hidden md:flex absolute left-1/2 top-10 -translate-x-1/2 z-20">
-                <div
-                  className="w-14 h-14 rounded-full bg-gray-900
-                                border-4 border-purple-500
-                                flex items-center justify-center
-                                shadow-[0_0_18px_rgba(130,69,236,0.45)]"
+
+              {/* CONTENT CARD (Left/Right) */}
+              <div className="w-full md:w-[45%] pl-16 md:pl-0 md:px-8 relative">
+                {/* Connector Line */}
+                <div className={`hidden md:block absolute top-10 w-8 h-[2px] bg-neon-purple/50 ${index % 2 === 0 ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`}></div>
+
+                <Tilt
+                  tiltMaxAngleX={3}
+                  tiltMaxAngleY={3}
+                  perspective={1000}
+                  scale={1.02}
+                  transitionSpeed={2000}
+                  className="h-full"
                 >
-                  <img
-                    src={experience.img}
-                    alt={experience.company}
-                    className="w-8 h-8 object-contain"
-                  />
-                </div>
+                  <div className="glass-card p-8 rounded-2xl relative border-l-4 border-l-purple-500 hover:shadow-[0_0_30px_rgba(130,69,236,0.15)] transition-all duration-300 group bg-card-bg/80 backdrop-blur-md border border-white/5">
+
+                    {/* Hash ID Decoration */}
+                    <div className="absolute top-4 right-4 text-xs font-mono text-neon-blue/50 group-hover:text-neon-blue transition-colors">
+                      Block_#{Math.floor(Math.random() * 999999)}
+                    </div>
+
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-white/5 p-2 flex items-center justify-center border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                        <img
+                          src={experience.img}
+                          alt={experience.company}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white group-hover:text-neon-purple transition-colors">
+                          {experience.role}
+                        </h3>
+                        <p className="text-sm text-neon-blue font-mono">{experience.company}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4 font-light">
+                      {experience.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 text-xs font-mono text-gray-500 border-t border-white/5 pt-3">
+                      <span className="text-green-500">✔ Validated:</span>
+                      <span>[{experience.date}]</span>
+                    </div>
+
+                    {/* Tech Stack */}
+                    {experience.skills?.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {experience.skills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="text-[10px] px-2 py-1 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 uppercase tracking-wider"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </Tilt>
               </div>
 
-              {/* Card */}
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                className="relative w-full md:w-[44%]
-                           bg-gray-900/90 backdrop-blur-md
-                           border border-white/40 rounded-2xl
-                           p-6 sm:p-7
-                           shadow-[0_0_25px_rgba(130,69,236,0.25)]"
-              >
-                {/* Badges */}
-                {experience.badges?.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-3 md:absolute md:top-4 md:right-4">
-                    {experience.badges.slice(0, 2).map((badge, idx) => (
-                      <Badge key={idx} label={badge} />
-                    ))}
-                  </div>
-                )}
+              {/* CENTER NODE */}
+              <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-dark-bg border-2 border-neon-purple z-10 shadow-[0_0_15px_rgba(176,38,255,0.6)] flex items-center justify-center transform rotate-45 group-hover:scale-125 transition-transform">
+                <div className="w-3 h-3 bg-neon-blue animate-pulse"></div>
+              </div>
 
-                {/* Header */}
-                <div className="flex items-start gap-4 mb-4">
-                  {/* Card Logo — ONLY LOGO ON MOBILE */}
-                  <div
-                    className="w-14 h-14 rounded-xl bg-white/10
-                                  flex items-center justify-center
-                                  ring-2 ring-purple-500/40
-                                  shadow-[0_0_12px_rgba(130,69,236,0.3)]
-                                  shrink-0"
-                  >
-                    <img
-                      src={experience.img}
-                      alt={experience.company}
-                      className="w-9 h-9 object-contain"
-                    />
-                  </div>
+              {/* EMPTY SPACE for structure */}
+              <div className="w-full md:w-[45%] hidden md:block"></div>
 
-                  {/* Text */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-white leading-snug">
-                      {experience.role}
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      {experience.company}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {experience.date}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  {experience.desc}
-                </p>
-
-                {/* Tech Stack */}
-                {experience.skills?.length > 0 && (
-                  <div>
-                    <h5 className="text-sm font-medium text-purple-400 mb-2">
-                      {experience.type === "tech"
-                        ? "Tech Stack"
-                        : "Tools & Skills"}
-                    </h5>
-
-                    <ul className="flex flex-wrap gap-2">
-                      {experience.skills.map((skill, idx) => (
-                        <li
-                          key={idx}
-                          className="bg-[#8245ec]/20 text-gray-200
-                   px-3 py-1 text-xs rounded-lg
-                   border border-[#8245ec]/40"
-                        >
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </motion.div>
             </motion.div>
           ))}
         </div>
