@@ -36,22 +36,7 @@ html {
   color: #fff;
 }
 
-:root {
-  /* Default Cyberpunk Theme */
-  --neon-purple: #b026ff;
-  --neon-blue: #00f3ff;
-  --dark-bg: #050414;
-}
 
-.theme-matrix {
-  /* Matrix Theme */
-  --neon-purple: #00ff00;
-  /* Green replaces Purple */
-  --neon-blue: #008f11;
-  /* Darker Green replaces Blue */
-  --dark-bg: #000000;
-  /* Pure Black */
-}
 
 
 @layer utilities {
