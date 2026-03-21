@@ -43,7 +43,7 @@ import vercelLogo from './assets/tech_logo/vercel.png';
 
 
 // Experience Section Logo's
-import iotAcademy from './assets/company_logo/iot_academy.png';
+import iotAcademy from './assets/company_logo/theiotacademy_logo.jpg';
 import bitsLogo from './assets/company_logo/bits.png';
 import codecTech from './assets/company_logo/codec_technologies_india_logo.jpg';
 import iitr from './assets/company_logo/esummit_logo.jpg';
@@ -59,8 +59,8 @@ import bitsinternshipLogo from './assets/work_logo/bitsinternship.png';
 import foodLogo from './assets/work_logo/food.png';
 import gitConnectLogo from './assets/work_logo/git.png';
 import portfolioLogo from './assets/work_logo/portfolio.png';
-import dharachain from './assets/work_logo/dharachain.png';
-import certifyChain from './assets/work_logo/certifychain.png';
+import dharachain from './assets/work_logo/DharaChain.png';
+import certifyChain from './assets/work_logo/CertifyChain.png';
 
 export const SkillsInfo = [
   {
