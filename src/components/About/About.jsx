@@ -82,7 +82,7 @@ const About = () => {
                 Let's Talk
               </a>
               <a
-                href="https://drive.google.com/file/d/1HCQ0icfe9oskgRVvzcxgjD7edsfe9UK4/view?usp=sharing"
+                href="https://drive.google.com/file/d/1QNQJvp-m-4hxuYLrvKOV1vJuHQFSIRJD/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 rounded-full border border-gray-600 text-white font-medium hover:border-purple-500 hover:bg-purple-500/10 transition-all"

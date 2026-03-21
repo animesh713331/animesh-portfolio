@@ -43,6 +43,7 @@ import vercelLogo from './assets/tech_logo/vercel.png';
 
 
 // Experience Section Logo's
+import iotAcademy from './assets/company_logo/iot_academy.png';
 import bitsLogo from './assets/company_logo/bits.png';
 import codecTech from './assets/company_logo/codec_technologies_india_logo.jpg';
 import iitr from './assets/company_logo/esummit_logo.jpg';
@@ -58,6 +59,8 @@ import bitsinternshipLogo from './assets/work_logo/bitsinternship.png';
 import foodLogo from './assets/work_logo/food.png';
 import gitConnectLogo from './assets/work_logo/git.png';
 import portfolioLogo from './assets/work_logo/portfolio.png';
+import dharachain from './assets/work_logo/dharachain.png';
+import certifyChain from './assets/work_logo/certifychain.png';
 
 export const SkillsInfo = [
   {
@@ -140,12 +143,33 @@ export const SkillsInfo = [
 ];
 
   export const experiences = [
+
     {
-      id: 0,
+  id: 0,
+  img: iotAcademy,
+  role: "IoT Intern",
+  company: "Uniconverge Technology (IoT Academy, Upskill Campus)",
+  date: "March 2026 - Present",
+  desc: "Working on IoT-based systems involving sensor integration, real-time data acquisition, and automation. Developed multiple hardware-based prototypes using Arduino and simulation tools, focusing on practical applications like environmental monitoring and smart automation. Gained hands-on experience in building embedded systems, implementing sensor-driven logic, and designing efficient IoT solutions for real-world use cases.",
+  type: "tech",
+  skills: [
+    "Arduino",
+    "Embedded C/C++",
+    "TinkerCAD",
+    "IoT Prototyping",
+    "Sensors (Ultrasonic, Temperature, Moisture)",
+    "Automation Systems",
+    "Microcontrollers",
+    "Circuit Design"
+  ],
+},
+    
+    {
+      id: 1,
       img: codecTech,
       role: "Blockchain Technology Intern ",
       company: "Codec Technologies India Pvt. Ltd.",
-      date: "January 2026 - Present | Remote",
+      date: "January 2026 - March 2026 | Remote",
       desc: "Working on blockchain fundamentals and real-world Web3 use cases, with a focus on understanding decentralized architectures and Ethereum-based ecosystems. Involved in designing and developing smart contracts, learning best practices for security, transparency, and gas-efficient execution. Also contributing to Web3 integrations by connecting smart contracts with frontend and backend services.",
       type:"tech",
       skills: [
@@ -154,7 +178,7 @@ export const SkillsInfo = [
 
     },
     {
-      id: 1,
+      id: 2,
       img: bitsLogo,
       role: "ML Reaseach Intern",
       company: "BIT Sindri , Dhanbad",
@@ -167,7 +191,7 @@ export const SkillsInfo = [
        badges: ["Internship", "Research"]
     },
     {
-      id: 2,
+      id: 3,
       img: iitr,
       role: "Campus Ambassador Esummit IIT Roorkee 2025",
       company: "Ecell IIT Roorkee",
@@ -215,6 +239,31 @@ export const SkillsInfo = [
   ];
   
   export const projects = [
+
+    {
+  id: 2,
+  title: "DharaChain — Decentralized Land Registry",
+  description:
+    "A blockchain-based land registry platform designed to ensure transparent, tamper-proof, and immutable property ownership records. Built on Ethereum, the system enables secure role-based workflows for inspectors, buyers, and sellers through smart contracts. Provides on-chain verification of ownership history while eliminating fraud and manual discrepancies in land transactions.",
+  image: dharachain,
+  tags: ["React", "Tailwind CSS", "Solidity", "Ethereum", "Hardhat", "Ethers.js", "Web3"],
+  github: "https://github.com/animesh713331/DharaChain",
+  webapp: "https://dharachain.vercel.app/",
+  badges: ["Blockchain","Web3"],
+},
+
+{
+  id: 3,
+  title: "CertifyChain — Blockchain Certificate Verification",
+  description:
+    "A decentralized application for issuing and verifying tamper-proof academic certificates as Soulbound NFTs (ERC-721) on Ethereum. Integrated IPFS for decentralized storage of certificate metadata and implemented role-based access control using OpenZeppelin. Enables instant public verification, preventing certificate forgery and ensuring trust in academic credentials.",
+  image: certifyChain,
+  tags: ["React", "Tailwind CSS", "Solidity", "Ethereum", "Hardhat", "Ethers.js", "IPFS", "OpenZeppelin"],
+  github: "https://github.com/animesh713331/CertifyChain",
+  webapp: "https://certifychain-umber.vercel.app/",
+  badges: ["Blockchain","DApp"],
+},
+
     {
       id: 0,
       title: "Smart Student Hub (SIH 2025)",
@@ -238,7 +287,7 @@ export const SkillsInfo = [
       badges: ["ML", "Internship"],
     },
     {
-      id: 2,
+      id: 4,
       title: "Food Menu Backend API",
       description:
         "A backend-focused REST API built to practice core backend engineering concepts, including routing, middleware-based authentication, and role-based request handling. The system supports admin-controlled food menu management and user cart operations with structured API responses and proper error handling.",
@@ -248,7 +297,7 @@ export const SkillsInfo = [
       webapp: "https://github.com/animesh713331/Food_BackendProject",
     },
     {
-      id: 3,
+      id: 5,
       title: "GitConnect — GitHub Profile Viewer",
       description:
         "A React-based web application that fetches and displays GitHub user profile data using the GitHub API. Built with a focus on clean UI, component-based architecture, and efficient API handling.",
@@ -258,7 +307,7 @@ export const SkillsInfo = [
       webapp: "https://gitconnect-animesh09.netlify.app/",
     },
     {
-      id: 4,
+      id: 6,
       title: "Personal Portfolio Website",
       description:
         "A modern, responsive personal portfolio showcasing projects, skills, and experience. Built with a focus on clean design, smooth interactions, and performance, and deployed with a custom domain.",
